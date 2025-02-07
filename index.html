@@ -13,19 +13,33 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
     <script src="x-frame-bypass.js" type="module"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <iframe is="x-frame-bypass"></iframe>  </body>
+    <iframe is="x-frame-bypass" allowfullscreen></iframe>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const iframe = document.querySelector('iframe');
-            const newURL = prompt("Enter the website URL:"); // Removed default now.gg
+            const newURL = prompt("Enter the website URL:");
             if (newURL) {
                 iframe.src = newURL;
             } else {
-                alert("No URL entered.  Please enter a URL to view content."); // More informative message
-               // iframe.src = ""; // Or set to a blank page if you prefer
+                alert("No URL entered. Please enter a URL to view content.");
+                // iframe.src = ""; // Or set to a blank page if you prefer
             }
         });
     </script>
