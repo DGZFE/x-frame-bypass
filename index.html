@@ -10,41 +10,24 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="X-Frame-Bypass Demo">
 
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-        iframe {
-            display: block;
-            width: calc(100% - 40px);
-            height: calc(100% - 40px);
-            margin: 20px;
-        }
-        img {
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-    </style>
-
+    <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
     <script src="x-frame-bypass.js" type="module"></script>
+</head>
+<body>
+    <iframe is="x-frame-bypass"></iframe>  </body>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const iframe = document.querySelector('iframe');
-            const newURL = prompt("Enter the website URL:", "https://now.gg");
+            const newURL = prompt("Enter the website URL:"); // Removed default now.gg
             if (newURL) {
                 iframe.src = newURL;
             } else {
-                alert("No URL entered. Using default.");
+                alert("No URL entered.  Please enter a URL to view content."); // More informative message
+               // iframe.src = ""; // Or set to a blank page if you prefer
             }
         });
     </script>
-</head>
-<body>
-    <iframe is="x-frame-bypass" src="https://now.gg"></iframe>
 </body>
 </html>
