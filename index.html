@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="X-Frame-Bypass: Web Component extending IFrame to bypass X-Frame-Options: deny/sameorigin">
-    <title>The DG8AB Website Unblocker</title>
+    <title>JetGPT</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="X-Frame-Bypass Demo">
+    <meta name="apple-mobile-web-app-title" content="JetGPT">
     
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
@@ -29,18 +29,13 @@
     </style>
 </head>
 <body>
-    <iframe is="x-frame-bypass" allowfullscreen></iframe>
+    <iframe is="x-frame-bypass" src="https://dg8ab.zapier.app" allowfullscreen></iframe>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const iframe = document.querySelector('iframe');
-            const newURL = prompt("Enter the website URL:");
-            if (newURL) {
-                iframe.src = newURL;
-            } else {
-                alert("No URL entered. Please enter a URL to view content.");
-                // iframe.src = ""; // Or set to a blank page if you prefer
-            }
+            const newURL = "https://dg8ab.zapier.app";
+            iframe.src = newURL;
         });
     </script>
 </body>
